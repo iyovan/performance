@@ -1,0 +1,17 @@
+<?php
+/**
+ * Plugin Name: Preload Fonts
+ * Plugin URI:  https://wpmudev.com/
+ * Description: Fix Preload Fonts Issue In Google Lighthouse
+ * Version:     1.0.0
+ * Author:      Jovan Kitanovic | WPMUDEV
+ * Author URI:  https://wpmudev.com/profile/jovankitanovic
+ * License: 	GPLv2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ */
+ 
+function font_preloading_preload_key_requests() { ?>
+	<link rel="preload" as="font" type="font/woff" href="woffurl" crossorigin="anonymous">
+	<link rel="preload" as="font" type="font/woff2" href="woff2url" crossorigin="anonymous">
+<?php }
+add_action( 'wp_head', 'font_preloading_preload_key_requests' );
